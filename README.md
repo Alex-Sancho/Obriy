@@ -40,10 +40,15 @@ the cards just show icons instead of window previews.
 
 And what Obriy does *not* do:
 
-- **It makes no network connections.** The current build contains no networking code
-  at all. Nothing you do is sent anywhere, because there is nowhere to send it.
-  (A future version will add an update check – it will be announced here, and
-  it will only ever ask "is there a newer version".)
+- **It makes no network connections.** Version 0.3.3 and earlier contain no
+  networking code at all. Nothing you do is sent anywhere, because there is
+  nowhere to send it.
+
+  The next version adds one, and one only: Obriy will ask
+  `obriy.dev` whether a newer version exists. Nothing about you travels with
+  that question – no identifier, no usage, no list of your apps. It will never
+  ask while a focus session is running, so an update can never become a way out
+  of a session you set yourself.
 - **It does not log keystrokes.** The event tap reacts to Cmd+Tab and to the
   shortcut you configure. It reads no text.
 - **It does not read window contents.** Screen Recording is used to render
@@ -57,9 +62,11 @@ This is what early access is for. Open an
 
 ## Updating
 
-Obriy does not update itself yet. Check this page, or watch the
-repository to be notified of new releases. Automatic updates are the next
-thing being built.
+Version 0.3.3 does not update itself: check this page, or watch the repository
+to be notified of new releases. Moving from 0.3.x to the next version is a
+manual download – the update mechanism only exists from that version onward.
+
+After that, Obriy checks on its own and asks before installing anything.
 
 ---
 
