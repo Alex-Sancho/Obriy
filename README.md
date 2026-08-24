@@ -40,15 +40,24 @@ the cards just show icons instead of window previews.
 
 And what Obriy does *not* do:
 
-- **It makes no network connections.** Version 0.3.3 and earlier contain no
-  networking code at all. Nothing you do is sent anywhere, because there is
-  nowhere to send it.
+- **It goes online three times, and only for these three things.** Nothing is
+  sent in the background, on a schedule, or without you asking.
 
-  The next version adds one, and one only: Obriy will ask
-  `obriy.dev` whether a newer version exists. Nothing about you travels with
-  that question – no identifier, no usage, no list of your apps. It will never
-  ask while a focus session is running, so an update can never become a way out
-  of a session you set yourself.
+  1. **Update check** – Obriy asks `obriy.dev` whether a newer version exists.
+     Nothing about you travels with that question: no identifier, no usage, no
+     list of your apps. It never asks while a focus session is running, so an
+     update can never become a way out of a session you set yourself.
+  2. **Licence activation**, once, when you paste your key. Two things travel:
+     the key itself and an opaque tag for this machine. The tag is an HMAC of
+     the board identifier, not the identifier – it is stable enough to count
+     seats and useless for anything else, including linking you across products.
+     Your licence is verified *on your Mac*, by signature, so once activated
+     Obriy works offline for as long as you like.
+  3. **Seat list**, when you open the Account page yourself – so you can see
+     which machines your licence currently covers, and free one.
+
+  What never travels: keystrokes, window titles, screenshots, the apps you run,
+  or anything at all during a focus session.
 - **It does not log keystrokes.** The event tap reacts to Cmd+Tab and to the
   shortcut you configure. It reads no text.
 - **It does not read window contents.** Screen Recording is used to render
