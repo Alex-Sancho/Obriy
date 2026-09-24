@@ -3,7 +3,7 @@
 A Cmd+Tab that switches **windows**, not apps – plus a focus mode that keeps
 the screen clear of everything else for as long as you set.
 
-> **Early access.** Version 0.3.2 is usable day to day. It is not finished,
+> **Early access.** Version 0.4 is usable day to day. It is not finished,
 > and it is not yet for sale.
 
 ## Download
@@ -40,24 +40,28 @@ the cards just show icons instead of window previews.
 
 And what Obriy does *not* do:
 
-- **It goes online three times, and only for these three things.** Nothing is
-  sent in the background, on a schedule, or without you asking.
+- **It goes online for two things only, and never on its own during a focus
+  session.**
 
-  1. **Update check** – Obriy asks `obriy.dev` whether a newer version exists.
-     Nothing about you travels with that question: no identifier, no usage, no
-     list of your apps. It never asks while a focus session is running, so an
-     update can never become a way out of a session you set yourself.
-  2. **Licence activation**, once, when you paste your key. Two things travel:
-     the key itself and an opaque tag for this machine. The tag is an HMAC of
-     the board identifier, not the identifier – it is stable enough to count
-     seats and useless for anything else, including linking you across products.
-     Your licence is verified *on your Mac*, by signature, so once activated
-     Obriy works offline for as long as you like.
-  3. **Seat list**, when you open the Account page yourself – so you can see
-     which machines your licence currently covers, and free one.
+  1. **Update check** – Obriy asks `obriy.dev` whether a newer version exists:
+     once a day if you turn automatic checks on in Settings, otherwise only
+     when you ask. Nothing about you travels with that question: no
+     identifier, no usage, no list of your apps. It never asks while a focus
+     session is running, so an update can never become a way out of a session
+     you set yourself.
+  2. **Licence** – only once you have pasted a key. Obriy activates it, then
+     checks with `obriy.dev` at launch, when you open the Licence page, and
+     once a day, so a seat freed elsewhere or a refunded licence is noticed.
+     Four things travel: the key, an opaque tag for this Mac, the name you
+     gave this Mac and its model (such as `Mac16,7`). The tag is an HMAC of
+     the board identifier, not the identifier – stable enough to count seats
+     and useless for anything else, including linking you across products.
+     If `obriy.dev` can't be reached, nothing changes: Obriy keeps working.
+
+  Without a key – during the trial – there is no licence traffic at all.
 
   What never travels: keystrokes, window titles, screenshots, the apps you run,
-  or anything at all during a focus session.
+  or anything Obriy would send on its own during a focus session.
 - **It does not log keystrokes.** The event tap reacts to Cmd+Tab and to the
   shortcut you configure. It reads no text.
 - **It does not read window contents.** Screen Recording is used to render
@@ -71,11 +75,12 @@ This is what early access is for. Open an
 
 ## Updating
 
-Version 0.3.3 does not update itself: check this page, or watch the repository
-to be notified of new releases. Moving from 0.3.x to the next version is a
-manual download – the update mechanism only exists from that version onward.
+From 0.3.3b on, Obriy updates itself: it checks as described above and asks
+before installing anything. After an update, a short window shows what
+changed.
 
-After that, Obriy checks on its own and asks before installing anything.
+Coming from 0.3.3 or earlier, download the new version by hand – those
+versions have no update mechanism.
 
 ---
 
